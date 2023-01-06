@@ -6,6 +6,11 @@ name: 'airbnb'
 version: '1.0.0'
 config-version: 2
 
+vars:
+  dbt_utils:
+    # Option 2: not configurable, but very easy to get right
+    surrogate_key_treat_nulls_as_empty_strings: True
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'airbnb'
 
@@ -28,6 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
+
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
@@ -39,3 +45,4 @@ models:
       +materialized: table
     src:
       +materialized: ephemeral
+    
