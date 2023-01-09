@@ -6,10 +6,10 @@ name: 'airbnb'
 version: '1.0.0'
 config-version: 2
 
-vars:
-  dbt_utils:
-    # Option 2: not configurable, but very easy to get right
-    surrogate_key_treat_nulls_as_empty_strings: True
+# vars:
+#   dbt_utils:
+#     # Option 2: not configurable, but very easy to get right
+#     surrogate_key_treat_nulls_as_empty_strings: True
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'airbnb'
@@ -23,6 +23,7 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
+assets-paths: ["assets "]
 
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
